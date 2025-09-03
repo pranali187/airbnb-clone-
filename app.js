@@ -16,10 +16,6 @@ const flash = require('connect-flash');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require("./models/user");
-const listingsRouter = require("./routes/listings"); 
-
-app.use("/", listingsRouter);
-
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
