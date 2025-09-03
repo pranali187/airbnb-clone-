@@ -6,7 +6,7 @@ const express = require('express');
 const app = express();
 const port = 8081;
 const mongoose = require('mongoose')
-const mongo_url = "mongodb://localhost:27017/wanderlust";
+const mongo_url = `mongodb+srv://jagadalepranali81:${process.env.MONGO_PASSWORD}@cluster0.edb97dr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
