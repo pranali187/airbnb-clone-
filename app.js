@@ -16,6 +16,9 @@ const flash = require('connect-flash');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require("./models/user");
+const listingsRouter = require("./routes/listings"); 
+
+app.use("/", listingsRouter);
 
 
 app.set('view engine', 'ejs');
@@ -115,9 +118,7 @@ app.use("/" ,userRouter);
 //     next(new ExpressError(404, "page not found :("))
 // })
 
-app.get("/", (req, res) => {
-  res.send("Backend is running 🚀");
-});
+
 
 app.use((err, req, res, next) => {
     let { status, message } = err;
