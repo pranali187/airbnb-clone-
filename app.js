@@ -114,7 +114,9 @@ app.use("/" ,userRouter);
 //     next(new ExpressError(404, "page not found :("))
 // })
 
-
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
 
 app.use((err, req, res, next) => {
     let { status, message } = err;
