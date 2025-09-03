@@ -114,8 +114,11 @@ app.use("/" ,userRouter);
 //     next(new ExpressError(404, "page not found :("))
 // })
 
-app.get("/", (req, res) => {
-  res.redirect("/listings");
+app.use((req, res, next) => {
+  if (req.headers["x-forwarded-proto"] !== "https") {
+    return res.redirect("https://" + req.headers.host + req.url);
+  }
+  next();
 });
 
 app.use((err, req, res, next) => {
