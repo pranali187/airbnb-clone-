@@ -115,7 +115,7 @@ app.use("/" ,userRouter);
 // })
 
 app.get("/", (req, res) => {
-  res.redirect("https//listings");
+  res.redirect("/listings");
 });
 
 app.use((err, req, res, next) => {
