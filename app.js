@@ -115,6 +115,10 @@ app.use("/" ,userRouter);
 //     next(new ExpressError(404, "page not found :("))
 // })
 
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
+
 app.use((err, req, res, next) => {
     let { status, message } = err;
     // res.status(status).send(message);
