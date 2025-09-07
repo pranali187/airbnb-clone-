@@ -38,7 +38,11 @@ module.exports.createListings = async (req, res, next) => {
             q: newListing.location,
             format: "json",
             limit: 5
-        }
+        },
+        headers: {
+        "User-Agent": "airbnbclone/1.0 (jagadalepranali72@gmail.com)"  // required
+    }
+
     });
 
     if (geoRes.data.length > 0) {
