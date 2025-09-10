@@ -12,47 +12,57 @@
                 #filter {
                     flex-wrap: wrap;
                 }
+
                 .filter {
-                    flex: 0 0 33.33%; 
+                    flex: 0 0 33.33%;
                     padding: 1rem;
                 }
             }
-                .filter {
-                    padding: 1rem;
-                    text-align: center;
-                    opacity: 0.7;
-                }
 
-                .filter:hover {
-                    opacity: 1;
-                    cursor: pointer;
-                }
+            .filter {
+                padding: 1rem;
+                text-align: center;
+                opacity: 0.7;
+            }
 
-                .filter p {
+            .filter:hover {
+                opacity: 1;
+                cursor: pointer;
+            }
+
+            .filter p {
+                font-size: 0.8rem;
+            }
+
+            .taxInfo {
+                display: none;
+            }
+
+            .tax-switch {
+                border: 1px solid black;
+                border-radius: 1rem;
+                height: 3.25rem;
+                padding: 1rem;
+                align-items: center;
+            }
+
+            @media (max-width:380px) {
+                .tax-switch {
+                    height: 2.5rem;
+                    padding: 0.5rem;
                     font-size: 0.8rem;
                 }
+            }
 
-                .taxInfo {
-                    display: none;
-                }
+            .navbar-nav {
+                position: relative;
+                z-index: 1;
+            }
 
-                .tax-switch {
-                    border: 1px solid black;
-                    border-radius: 1rem;
-                    height: 3.25rem;
-                    padding: 1rem;
-                    align-items: center;
-                }
-
-                .navbar-nav {
-                    position: relative;
-                    z-index: 1;
-                }
-
-                button i {
-                    color: #fe424d;
-                    margin: 0.5rem;
-                }
+            button i {
+                color: #fe424d;
+                margin: 0.5rem;
+            }
         </style>
 
         <h1>All listings</h1>
