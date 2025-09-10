@@ -147,8 +147,14 @@
                                     <%= listing.title %>
                                 </b>
                                 <br>
-                                <%= listing.price.toLocaleString("en-IN") %> / night
-                                    <i class="taxInfo">&nbsp;&nbsp;+18% GST</i>
+                                <% let GST=0.18; 
+                                let GSTprice=listing.price * GST; 
+                                let price=GSTprice + listing.price; %>
+                                    <%= listing.price.toLocaleString("en-IN") %> / night
+                                    <br>
+                                        <i class="taxInfo">
+                                            With Taxes: <%= price.toLocaleString("en-IN") %> / night
+                                        </i>
                             </p>
                         </div>
                     </div>
@@ -158,6 +164,7 @@
     </body>
 
     <script>
+
         let priceToggle = document.getElementById("switchCheckDefault");
         priceToggle.addEventListener("click", () => {
             let taxInfo = document.getElementsByClassName("taxInfo");
