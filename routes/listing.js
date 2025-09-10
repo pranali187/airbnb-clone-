@@ -21,26 +21,5 @@ router.route("/:id")
 .delete(isOwner, isLoggedIn, wrapAsync(ListingController.destroyListing))
 
 router.get("/:id/edit", isLoggedIn, wrapAsync(ListingController.edit))
- 
-
-//index
-router
-
-//new
-router
-
-//show
-router
-
-//create
-router
-//edite
-router
-
-//updateListing
-router
-
-//deleteListing
-router
 
 module.exports = router;

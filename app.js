@@ -74,6 +74,7 @@ app.use((req,res,next)=>{
 const listingsRouter = require('./routes/listing');  
 const reviewsRouter = require('./routes/reviews');
 const userRouter = require('./routes/userRouter');
+const Listing = require("./models/listings");
 
 async function main() {
     try {
@@ -118,15 +119,22 @@ app.get("/", (req, res) => {
   res.redirect("/listings");
 });
 
-app.use((err, req, res, next) => {
-    let { status, message } = err;
-    // res.status(status).send(message);
-    res.render("error", { message })
-})
+app.get("/search", async (req, res) => {
+    let { search } = req.query;
+    try {
+        let searchListing = await Listing.find({ location: { $regex: search, $options: "i" }});
+        res.render("listings/search", { searchListing, search });
+    } catch (err) {
+        console.error(err);
+        res.render("listings/search", { searchListing: [],search });
+    }
+});
 
 app.use((err, req, res, next) => {
-    res.send("something went wrong :(");
-})
+    console.error(err); 
+    let { status = 500, message = "Something went wrong" } = err;
+    res.status(status).send(message);
+});
 
 app.listen(port, () => {
     console.log(`listening at ${port}`)

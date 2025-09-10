@@ -35,18 +35,18 @@
 
                     <div class="mb-3 col-md-8">
                         <label for="country" class="form-label">Country</label>
-                        <input name="listing[country]" value="<%= list.location %>" type="text" class="form-control" required>
+                        <input name="listing[country]" value="<%= list.country %>" type="text" class="form-control" required>
                         <div class="invalid-feedback">Please enter valid country</div>
                     </div>
                 </div>
 
                 <div class="mb-3">
                     <label for="location" class="form-label">Location</label>
-                    <input name="listing[location]" value="<%= list.country %>" type="text" class="form-control" required>
+                    <input name="listing[location]" value="<%= list.location %>" type="text" class="form-control" required>
                     <div class="invalid-feedback">Please enter location</div>
                 </div>
                 
-                <button class="btn btn-dark add-btn edit-btn">Edit</button>
+                <button class="btn btn-dark add-btn edit-btn">Save</button>
             </form>
         </div>
     </body>
