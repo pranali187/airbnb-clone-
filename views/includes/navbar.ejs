@@ -14,8 +14,15 @@
     padding: 0.5rem 3rem 0.5rem 3rem;
   }
 
-  .brand{
+  .brand {
     display: flex;
+  }
+
+  @media (max-width:380px) {
+    .d-flex {
+      flex: 0 0 33.33%;
+      padding: 1rem;
+    }
   }
 </style>
 
@@ -35,7 +42,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ms-auto">
         <form class="d-flex" role="search" action="/search" method="get">
-          <input class="form-control me-2 search_input" type="search" placeholder="Search destinations" name="search"/>
+          <input class="form-control me-2 search_input" type="search" placeholder="Search destinations" name="search" />
           <button class="btn btn-search add-btn" type="submit">Search</button>
         </form>
       </div>
