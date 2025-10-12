@@ -17,6 +17,26 @@
   .brand{
     display: flex;
   }
+
+  .search_input::placeholder {
+  font-size: 1rem; /* normal size */
+}
+
+/* When screen size is small */
+@media (max-width: 576px) {
+  .search_input::placeholder {
+    font-size: 1rem; /* smaller placeholder text */
+  }
+}
+
+/* For even smaller screens (optional) */
+@media (max-width: 400px) {
+  .search_input::placeholder {
+    font-size: 1 rem;
+  }
+}
+
+
 </style>
 
 <nav class="navbar navbar-expand-md navbar-light bg-light border-bottom sticky-top">
